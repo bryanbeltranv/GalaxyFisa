@@ -1,5 +1,9 @@
-.gwt/
-.settings/
-target/
-.project
-.classpath
+.idea
+*.iws
+*.iml
+*.ipr
+*.jar
+*.class
+**/target
+/.idea
+/.mvn
