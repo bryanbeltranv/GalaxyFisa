@@ -1,20 +1,20 @@
 # GalaxyFisa
 ## Autor: Bryan Beltrán
 
-### Pasos para ejecutar aplicación:
+### 1. Pasos para ejecutar aplicación:
 1. Ingresar desde la terminal al directorio: GalaxyFisa1.0/GalaxyMain
 2. Ejecutar comando mvn clean install
 3. Ejecutar clase Main ubicada en el directorio:
 /GalaxyFisa1.0/GalaxyMain/src/main/java/com/fisa/Main.java
 
-### Carga de Datos 
+### 2. Carga de Datos 
 
 El sistema carga el archivo input.txt ubicado en el directorio:
 /GalaxyFisa1.0/GalaxyMain/src/main/resources/input.txt"
 
-### Problema
+### 3. Descripción del Problema
 
-#### GUÍA DEL COMERCIANTE PARA LA GALAXIA
+#### 3.1 Guía del comerciante para la galaxia
 
 Decidiste migrar de la tierra después de que el último colapso financiero dejara al 99,99% de la población de la tierra con el 0,01% de la riqueza. Afortunadamente, con la escasa suma de dinero que queda en su cuenta, puede permitirse el lujo de alquilar una nave espacial, abandonar la Tierra y volar por toda la galaxia para vender metales y tierra comunes (lo que aparentemente vale mucho).
 
@@ -34,7 +34,7 @@ Los números romanos se basan en siete símbolos:
 | L | 500|
 | M | 1000 |
 
-#### Restricciones de números romanos
+#### 3.2 Restricciones de números romanos
 
 Los números se forman combinando símbolos y sumando los valores. Por ejemplo, MMVI es 1000 + 1000 + 5 + 1 = 2006. Generalmente, los símbolos se colocan en orden de valor, comenzando con los valores más grandes. Cuando los valores más pequeños preceden a los valores más grandes, los valores más pequeños se restan de los valores más grandes y el resultado se suma al total. Por ejemplo MCMXLIV = 1000 + (1000 - 100) + (50 - 10) + (5 - 1) = 1944.
 
@@ -46,7 +46,7 @@ Solo se puede restar un símbolo de valor pequeño de cualquier símbolo de valo
 
 Un número escrito en números arábigos se puede dividir en dígitos. Por ejemplo, 1903 se compone de 1, 9, 0 y 3. Para escribir el número romano, cada uno de los dígitos distintos de cero debe tratarse por separado. En el ejemplo anterior, 1,000 = M, 900 = CM y 3 = III. Por lo tanto, 1903 = MCMIII.
 
-#### Ingreso de datos
+#### 3.3 Ingreso de datos
 
 La entrada a su programa consiste en líneas de texto que detallan sus notas sobre la conversión entre unidades intergalácticas y números romanos.
 
