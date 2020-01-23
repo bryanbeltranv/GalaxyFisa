@@ -36,7 +36,7 @@ public class MainFileController {
             }
         return true;
     }
-    
+
     public boolean readFileText(String file){
         try{
             FileReader fr = new FileReader(file);

@@ -4,16 +4,14 @@
     <list default="true" id="4c86c511-8335-45bd-adde-63e8c7bd3527" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GalaxyMain/src/main/java/com/fisa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyMain/src/main/java/com/fisa/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyMain/src/main/resources/texto.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyMain/src/main/resources/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lector/src/main/java/com/fisa/controller/MainFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lector/src/main/java/com/fisa/controller/MainFileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lector/src/main/java/com/fisa/model/MainFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lector/src/main/java/com/fisa/model/MainFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lector/src/main/java/com/fisa/controller/texto.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Lector/src/main/resources/texto.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lector/src/test/java/com/fisa/MainFileControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lector/src/test/java/com/fisa/MainFileControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RomanNumerals/src/main/java/controller/RomanNumeralsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/RomanNumerals/src/main/java/controller/RomanNumeralsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RomanNumerals/src/main/java/model/RomanNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/RomanNumerals/src/main/java/model/RomanNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RomanNumerals/src/main/java/model/RomanNumerals.java" beforeDir="false" afterPath="$PROJECT_DIR$/RomanNumerals/src/main/java/model/RomanNumerals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RomanNumerals/src/test/java/controller/RomanNumeralsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RomanNumerals/src/test/java/controller/RomanNumeralsControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Traslator/src/main/java/com/fisa/controller/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Traslator/src/main/java/com/fisa/controller/DictionaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Traslator/src/main/java/com/fisa/model/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/Traslator/src/main/java/com/fisa/model/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Traslator/src/test/java/com/fisa/controller/DictionaryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Traslator/src/test/java/com/fisa/controller/DictionaryControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,21 +45,26 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Lector/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/GalaxyMain/src/main/resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Lector/src/main/java/com/fisa/controller" />
+      <recent name="$PROJECT_DIR$/Lector/src/main/resources" />
+      <recent name="$PROJECT_DIR$/Lector/src/test/java/com/fisa" />
+      <recent name="$PROJECT_DIR$/Lector/src/test/resources" />
+      <recent name="C:\Users\Bryan Beltrán\IdeaProjects\GalaxyFisa\Lector\src\main\java\com\fisa\controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.fisa" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Bryan Beltrán\IdeaProjects\GalaxyFisa\Lector\src\main\java\com\fisa\controller" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Lector/src/main/resources" />
+      <recent name="$PROJECT_DIR$/GalaxyMain/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -76,7 +79,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in Lector">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fisa.Main" />
       <module name="GalaxyMain" />
@@ -98,14 +101,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in RomanNumerals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RomanNumerals" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in Traslator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Traslator" />
       <option name="PACKAGE_NAME" value="" />
@@ -114,28 +109,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RomanNumeralsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RomanNumerals" />
+    <configuration name="MainFileControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lector" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="com.fisa.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.RomanNumeralsControllerTest" />
+      <option name="PACKAGE_NAME" value="com.fisa" />
+      <option name="MAIN_CLASS_NAME" value="com.fisa.MainFileControllerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFileControllerTest.readFileTextTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lector" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fisa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fisa" />
+      <option name="MAIN_CLASS_NAME" value="com.fisa.MainFileControllerTest" />
+      <option name="METHOD_NAME" value="readFileTextTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Lector" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in Traslator" />
-        <item itemvalue="JUnit.All in RomanNumerals" />
-        <item itemvalue="JUnit.RomanNumeralsControllerTest" />
+        <item itemvalue="JUnit.All in Lector" />
+        <item itemvalue="JUnit.MainFileControllerTest.readFileTextTest" />
+        <item itemvalue="JUnit.MainFileControllerTest" />
       </list>
     </recent_temporary>
   </component>

@@ -175,10 +175,8 @@ public class DictionaryController {
     }
 
     public boolean isValueToken(String token){
-        try {
-            Double.parseDouble(token);
-        }catch (Exception e){
-            return false;
+        if (token.matches("\\d*")){
+            return true;
         }
         return true;
     }

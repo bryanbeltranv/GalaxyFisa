@@ -1,14 +1,11 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class RomanNumber {
     private String symbol;
     private  int value;

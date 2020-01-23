@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class MainFileControllerTest {
     private static MainFileController mainFileController;
     final Logger log = Logger.getLogger(MainFileControllerTest.class.getName());
-    static final String FILE_PATH = "src/main/java/com/fisa/controller/texto.txt";
+    static final String FILE_PATH = "src/main/resources/texto.txt";
 
     @BeforeClass
     public static void beforeClass() {

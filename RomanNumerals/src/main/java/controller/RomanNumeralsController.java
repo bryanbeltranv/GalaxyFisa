@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class RomanNumeralsController {
     RomanNumerals romanNumeralsFinal = new RomanNumerals();
     ArrayList <RomanNumber> listRomanNumberValues = new ArrayList<>();
+    RomanNumber romanNumber = new RomanNumber();
 
     public boolean validRomanNumeralStructure(String sentence){
         if(romanNumeralSemanticValidator(sentence) && validateOrderOfRomanNumeralValues()){
@@ -31,9 +32,9 @@ public class RomanNumeralsController {
         boolean validate = true;
         for(int i = 0 ; i <= listRomanNumberValues.size(); i++){
             if(i+1<listRomanNumberValues.size()){
-                int valueActual = listRomanNumberValues.get(i).getValue();
-                int valuePosterior = listRomanNumberValues.get(i+1).getValue();
-                if(valueActual<valuePosterior){
+                int firstValue = listRomanNumberValues.get(i).getValue();
+                int secondValue = listRomanNumberValues.get(i+1).getValue();
+                if(firstValue<secondValue){
                     validate = false;
                     break;
                 }
@@ -48,29 +49,29 @@ public class RomanNumeralsController {
         if(validateMaximumNumberOfRepetitions(sentence)) {
             sentence.chars().forEach((c -> listRomanNumerals.add((char) c)));
             for (int i = 0; i < listRomanNumerals.size(); i++) {
-                String actual = "" + listRomanNumerals.get(i);
+                String first = "" + listRomanNumerals.get(i);
                 if ((i + 1) < listRomanNumerals.size()) {
-                    String posterior = "" + listRomanNumerals.get(i + 1);
-                    if (orderNumberMayorMinor(actual, posterior)) {
-                        insertActualRomanNumber(actual);
+                    String second = "" + listRomanNumerals.get(i + 1);
+                    if (orderNumberMayorMinor(first, second)) {
+                        insertFirstRomanNumber(first);
                     } else {
-                        if (actual.equals(posterior)) {
+                        if (first.equals(second)) {
                             if ((i + 2) < listRomanNumerals.size()) {
-                                String tercero = "" + listRomanNumerals.get(i + 2);
-                                if (actual.equals(tercero)) {
-                                    insert3ValuesRomanNumber(actual , posterior , tercero);
+                                String third = "" + listRomanNumerals.get(i + 2);
+                                if (first.equals(third)) {
+                                    insert3ValuesRomanNumber(first , second , third);
                                     i = i + 2;
                                 } else {
-                                    insert2ValuesRomanNumber(actual , posterior);
+                                    insert2ValuesRomanNumber(first , second);
                                     i = i + 1;
                                 }
                             } else {
-                                insert2ValuesRomanNumber(actual , posterior);
+                                insert2ValuesRomanNumber(first , second);
                                 i = i + 1;
                             }
                         } else {
-                            if (subtractionAnalyzer(actual, posterior)) {
-                                insertSubtractionValuesRomanNumber(actual,posterior);
+                            if (subtractionAnalyzer(first, second)) {
+                                insertSubtractionValuesRomanNumber(first,second);
                                 i = i + 1;
                             } else {
                                 return false;
@@ -78,7 +79,7 @@ public class RomanNumeralsController {
                         }
                     }
                 } else {
-                    insertActualRomanNumber(actual);
+                    insertFirstRomanNumber(first);
                 }
             }
         }else{
@@ -87,31 +88,28 @@ public class RomanNumeralsController {
         return true;
     }
 
-    public void insertActualRomanNumber(String actual){
-        RomanNumber romanNumber = new RomanNumber();
-        romanNumber.setSymbol(actual);
-        romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(actual));
+    public void insertFirstRomanNumber(String first){
+        romanNumber.setSymbol(first);
+        romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(first));
         listRomanNumberValues.add(romanNumber);
     }
 
-    public void insertSubtractionValuesRomanNumber(String actual,String posterior){
-        RomanNumber romanNumber = new RomanNumber();
-        romanNumber.setSymbol(actual+posterior);
-        romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(posterior) - romanNumeralsFinal.getValueRomanNumber(actual));
+    public void insertSubtractionValuesRomanNumber(String first,String second){
+        romanNumber.setSymbol(first+second);
+        romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(second) - romanNumeralsFinal.getValueRomanNumber(first));
         listRomanNumberValues.add(romanNumber);
     }
 
-    public void insert2ValuesRomanNumber(String actual,String posterior){
+    public void insert2ValuesRomanNumber(String first,String second){
         RomanNumber romanNumber = new RomanNumber();
-        romanNumber.setSymbol(actual+posterior);
-        romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(actual)+romanNumeralsFinal.getValueRomanNumber(posterior));
+        romanNumber.setSymbol(first+second);
+        romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(first)+romanNumeralsFinal.getValueRomanNumber(second));
         listRomanNumberValues.add(romanNumber);
     }
 
-    public void insert3ValuesRomanNumber(String actual,String posterior, String tercero){
-        RomanNumber romanNumber = new RomanNumber();
-        romanNumber.setSymbol(actual+posterior+tercero);
-        romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(actual)+romanNumeralsFinal.getValueRomanNumber(posterior)+romanNumeralsFinal.getValueRomanNumber(tercero));
+    public void insert3ValuesRomanNumber(String first,String second, String third){
+        romanNumber.setSymbol(first+second+third);
+        romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(first)+romanNumeralsFinal.getValueRomanNumber(second)+romanNumeralsFinal.getValueRomanNumber(third));
         listRomanNumberValues.add(romanNumber);
     }
 
@@ -125,9 +123,9 @@ public class RomanNumeralsController {
                    case(4):
                        return ruleRepetition4LowerValue(sentence);
                }
-               if(repeat>4){
+                if(repeat>4){
                     return false;
-               }
+                }
             }
             if(symbol.contains("M") && repeat==4){
                 return false;
