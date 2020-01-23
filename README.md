@@ -5,12 +5,12 @@
 1. Ingresar desde la terminal al directorio: GalaxyFisa1.0/GalaxyMain
 2. Ejecutar comando mvn clean install
 3. Ejecutar clase Main ubicada en el directorio:
-/GalaxyFisa1.0/GalaxyMain/src/main/java/com/fisa/Main.java
+GalaxyFisa1.0/GalaxyMain/src/main/java/com/fisa/Main.java
 
 ### 2. Carga de Datos 
 
 El sistema carga el archivo input.txt ubicado en el directorio:
-/GalaxyFisa1.0/GalaxyMain/src/main/resources/input.txt"
+GalaxyFisa1.0/GalaxyMain/src/main/resources/input.txt"
 
 ### 3. Descripción del Problema
 
