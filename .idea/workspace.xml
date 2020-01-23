@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c86c511-8335-45bd-adde-63e8c7bd3527" name="Default Changelist" comment="" />
+    <list default="true" id="4c86c511-8335-45bd-adde-63e8c7bd3527" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyMain/src/main/java/com/fisa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyMain/src/main/java/com/fisa/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyMain/src/main/resources/texto.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyMain/src/main/resources/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lector/src/main/java/com/fisa/controller/MainFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lector/src/main/java/com/fisa/controller/MainFileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lector/src/main/java/com/fisa/model/MainFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lector/src/main/java/com/fisa/model/MainFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lector/src/test/java/com/fisa/MainFileControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lector/src/test/java/com/fisa/MainFileControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RomanNumerals/src/main/java/controller/RomanNumeralsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/RomanNumerals/src/main/java/controller/RomanNumeralsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RomanNumerals/src/main/java/model/RomanNumerals.java" beforeDir="false" afterPath="$PROJECT_DIR$/RomanNumerals/src/main/java/model/RomanNumerals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RomanNumerals/src/test/java/controller/RomanNumeralsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RomanNumerals/src/test/java/controller/RomanNumeralsControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Traslator/src/main/java/com/fisa/controller/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Traslator/src/main/java/com/fisa/controller/DictionaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Traslator/src/main/java/com/fisa/model/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/Traslator/src/main/java/com/fisa/model/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Traslator/src/test/java/com/fisa/controller/DictionaryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Traslator/src/test/java/com/fisa/controller/DictionaryControllerTest.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +27,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -30,7 +46,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GalaxyMain/src/main/resources" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -59,7 +76,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in Lector">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fisa.Main" />
       <module name="GalaxyMain" />
@@ -73,77 +90,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainFileControllerTest.errorSentenceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in Lector" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lector" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fisa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fisa" />
-      <option name="MAIN_CLASS_NAME" value="com.fisa.MainFileControllerTest" />
-      <option name="METHOD_NAME" value="errorSentenceTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainFileControllerTest.readFileTextTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lector" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fisa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fisa" />
-      <option name="MAIN_CLASS_NAME" value="com.fisa.MainFileControllerTest" />
-      <option name="METHOD_NAME" value="readFileTextTest" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="All in RomanNumerals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RomanNumerals" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainFileControllerTest.readMainFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lector" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fisa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fisa" />
-      <option name="MAIN_CLASS_NAME" value="com.fisa.MainFileControllerTest" />
-      <option name="METHOD_NAME" value="readMainFileTest" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="All in Traslator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Traslator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainFileControllerTest.traslateWordsToValueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lector" />
+    <configuration name="RomanNumeralsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RomanNumerals" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fisa.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.fisa" />
-      <option name="MAIN_CLASS_NAME" value="com.fisa.MainFileControllerTest" />
-      <option name="METHOD_NAME" value="traslateWordsToValueTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.RomanNumeralsControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in Lector" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MainFileControllerTest.errorSentenceTest" />
-        <item itemvalue="JUnit.MainFileControllerTest.readMainFileTest" />
-        <item itemvalue="JUnit.MainFileControllerTest.readFileTextTest" />
-        <item itemvalue="JUnit.MainFileControllerTest.traslateWordsToValueTest" />
+        <item itemvalue="JUnit.All in Traslator" />
+        <item itemvalue="JUnit.All in RomanNumerals" />
+        <item itemvalue="JUnit.RomanNumeralsControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -162,6 +154,17 @@
       <updated>1579312706154</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="21" key="#Project_Structure" timestamp="1579380306568">
@@ -225,23 +228,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/RomanNumerals/src/main/java/controller/RomanNumeralsController.java</url>
-          <line>167</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/RomanNumerals/src/main/java/controller/RomanNumeralsController.java</url>
-          <line>146</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Lector/src/main/java/com/fisa/controller/MainFileController.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Lector/src/main/java/com/fisa/controller/MainFileController.java</url>
-          <line>15</line>
+          <line>18</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>

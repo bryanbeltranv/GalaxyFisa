@@ -3,12 +3,16 @@ package controller;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 
 public class RomanNumeralsControllerTest {
 
     private static RomanNumeralsController romanNumeralsController;
+    final Logger log = Logger.getLogger(RomanNumeralsControllerTest.class.getName());
+    static final String ROMAN_NUMBER_TEST = "MCCXXIX";
 
     @BeforeClass
     public static void beforeClass() {
@@ -17,42 +21,43 @@ public class RomanNumeralsControllerTest {
 
     @Test
     public void subtractionAnalyzerTest() {
-        System.out.println("subtractionAnalyzerTest");
+        log.log(Level.FINE,"subtractionAnalyzerTest");
         assertEquals("Error subtractionAnalyzerTest", true, (romanNumeralsController.subtractionAnalyzer("I", "X")));
     }
 
     @Test
     public void orderNumberMayorMinorTest() {
-        System.out.println("orderNumberMayorMinor");
+        log.log(Level.FINE,"orderNumberMayorMinor");
         assertEquals("Error orderNumberMayorMinor", true, (romanNumeralsController.orderNumberMayorMinor("M", "I")));
     }
 
     @Test
     public void validateMaximumNumberOfRepetitionsTest() {
-        System.out.println("validateMaximumNumberOfRepetitionsTest");
-        assertEquals("Error validateMaximumNumberOfRepetitionsTest", true, (romanNumeralsController.validateMaximumNumberOfRepetitions("XXIX")));
+        log.log(Level.FINE,"validateMaximumNumberOfRepetitionsTest");
+        assertEquals("Error validateMaximumNumberOfRepetitionsTest", true, (romanNumeralsController.validateMaximumNumberOfRepetitions(ROMAN_NUMBER_TEST)));
     }
     @Test
     public void ruleRepetition3LowerValueTest() {
-        System.out.println("ruleRepetition3LowerValueTest");
-        assertEquals("Error ruleRepetition3LowerValueTest", true, (romanNumeralsController.ruleRepetition3LowerValue("CCC")));
+        log.log(Level.FINE,"ruleRepetition3LowerValueTest");
+        assertEquals("Error ruleRepetition3LowerValueTest", true, (romanNumeralsController.ruleRepetition3LowerValue(ROMAN_NUMBER_TEST)));
     }
 
     @Test
     public void ruleRepetition4LowerValueTest() {
-        System.out.println("ruleRepetition4LowerValueTest");
-        assertEquals("Error ruleRepetition4LowerValueTest", true, (romanNumeralsController.ruleRepetition4LowerValue("XXXIX")));
+        log.log(Level.FINE,"ruleRepetition4LowerValueTest");
+        assertEquals("Error ruleRepetition4LowerValueTest", true, (romanNumeralsController.ruleRepetition4LowerValue(ROMAN_NUMBER_TEST)));
     }
 
     @Test
-    public void RomanNumeralSemanticValidatorTest() {
-        System.out.println("RomanNumeralSemanticValidatorTest");
-        assertEquals("Error RomanNumeralSemanticValidatorTest", true, (romanNumeralsController.RomanNumeralSemanticValidator("MCCXXIX")));
+    public void romanNumeralSemanticValidatorTest() {
+        log.log(Level.FINE,"RomanNumeralSemanticValidatorTest");
+        assertEquals("Error RomanNumeralSemanticValidatorTest", true, (romanNumeralsController.romanNumeralSemanticValidator(ROMAN_NUMBER_TEST)));
     }
 
     @Test
     public void validRomanNumeralStructureTest() {
-        System.out.println("validRomanNumeralStructureTest");
-        assertEquals("Error validRomanNumeralStructureTest", true, (romanNumeralsController.validRomanNumeralStructure("MCCXXIX")));
+        log.log(Level.FINE,"validRomanNumeralStructureTest");
+        assertEquals("Error validRomanNumeralStructureTest", true, (romanNumeralsController.validRomanNumeralStructure(ROMAN_NUMBER_TEST)));
     }
+
 }

@@ -12,7 +12,7 @@ public class RomanNumerals {
 
     private int finalValue = 0;
 
-    private Map<String, RomanNumber> RomanNumeralsMap = new HashMap<String, RomanNumber>();
+    private Map<String, RomanNumber> romanNumeralsMap = new HashMap<>();
 
     private String [] symbols = {"I","V","X","L","C","D","M"};
 
@@ -21,16 +21,16 @@ public class RomanNumerals {
     }
 
     private void loadRomanNumerals(){
-        RomanNumeralsMap.put("I",new RomanNumber("I",1));
-        RomanNumeralsMap.put("V",new RomanNumber("V",5));
-        RomanNumeralsMap.put("X",new RomanNumber("X",10));
-        RomanNumeralsMap.put("L",new RomanNumber("L",50));
-        RomanNumeralsMap.put("C",new RomanNumber("C",100));
-        RomanNumeralsMap.put("D",new RomanNumber("D",500));
-        RomanNumeralsMap.put("M",new RomanNumber("M",1000));
+        romanNumeralsMap.put("I",new RomanNumber("I",1));
+        romanNumeralsMap.put("V",new RomanNumber("V",5));
+        romanNumeralsMap.put("X",new RomanNumber("X",10));
+        romanNumeralsMap.put("L",new RomanNumber("L",50));
+        romanNumeralsMap.put("C",new RomanNumber("C",100));
+        romanNumeralsMap.put("D",new RomanNumber("D",500));
+        romanNumeralsMap.put("M",new RomanNumber("M",1000));
     }
 
     public int getValueRomanNumber(String symbol){
-        return RomanNumeralsMap.get(symbol).getValue();
+        return romanNumeralsMap.get(symbol).getValue();
     }
 }

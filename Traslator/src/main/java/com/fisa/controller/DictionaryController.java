@@ -2,52 +2,49 @@ package com.fisa.controller;
 
 import com.fisa.model.Dictionary;
 import controller.RomanNumeralsController;
-
-import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DictionaryController {
+
+    final Logger log = Logger.getLogger(DictionaryController.class.getName());
     Dictionary dictionary = new Dictionary();
-    RomanNumeralsController RNC = new RomanNumeralsController();
+    RomanNumeralsController romanNumeralsController = new RomanNumeralsController();
     String sentenceCurrency = " ";
     int currencyValueTransformed = 0;
 
     public boolean traslateWordsToValue(String sentence){
         String[] array =  sentence.split(" ");
-        String romanNumeral = "";
+        StringBuilder romanNumeralAcum = new StringBuilder();
         for(String s : array){
             if(isWordToken(s)) {
-                romanNumeral = romanNumeral + dictionary.WordsMap.get(s).getTraslation();
+                romanNumeralAcum.append(dictionary.wordsMap.get(s).getTraslation());
             }
-            }
-       // System.out.println(romanNumeral);
-        RNC.validRomanNumeralStructure(romanNumeral);
-       // System.out.println(RNC.getRN().getFinalValue());
-        currencyValueTransformed = RNC.getRN().getFinalValue();
+        }
+        String romanNumeral = romanNumeralAcum.toString();
+        romanNumeralsController.validRomanNumeralStructure(romanNumeral);
+        currencyValueTransformed = romanNumeralsController.getRomanNumeralsFinal().getFinalValue();
         return true;
     }
 
     public boolean assignValueToWord(String sentence){
-        RNC.getListRomanNumberValues().clear();//CODIGO
+        romanNumeralsController.getListRomanNumberValues().clear();
         String[] array =  sentence.split(" ");
         int pos = 0;
         if((pos+2)<array.length){
             String word = array [pos];
             String assign = array[pos+1];
             String romanSymbol = array[pos+2];
-            if(!isWordToken(word)) {
-                if (isAssignToken(assign)) {
-                    if (isRomanSymbol(romanSymbol)) {
-                        dictionary.insertWord(word,romanSymbol);
-                        System.out.println("Value of Word : " + word + " as " + romanSymbol);
-                    }
-                }
+            if(!isWordToken(word) && (isAssignToken(assign)) && (isRomanSymbol(romanSymbol))) {
+                dictionary.insertWord(word,romanSymbol);
+                System.out.println("Value of Word : " + word + " as " + romanSymbol);
             }
         }
         return true;
     }
 
     public boolean productQuery(String sentence){
-        RNC.getListRomanNumberValues().clear();
+        romanNumeralsController.getListRomanNumberValues().clear();
         try{
             String[] array = sentence.split(" ");
             int pos = 0;
@@ -55,27 +52,19 @@ public class DictionaryController {
             String many = array[pos + 1];
             String credits = array[pos + 2];
             String is = array[pos+3];
-            if (isQueryToken(how)) {
-                if (isQueryToken(many)) {
-                    if(isCurrencyToken(credits)) {
-                        if (isAssignToken(is)) {
-                            int wordPos = pos + 4;
-                            String currencyText = "" + array[wordPos];
-                            while (isWordToken(array[wordPos + 1])) {
-                                wordPos = wordPos + 1;
-                                currencyText = currencyText + " " + array[wordPos];
-                            }
-                            String product = array[wordPos + 1];
-                            if (existProductToken(product)){
-                                if(isQueryToken(array[wordPos+2])){
-                                    getSentenceCurrency(0, currencyText);
-                                    traslateWordsToValue(sentenceCurrency);
-                                    double valProduct = getValueProductUnique(array[wordPos + 1]);
-                                    System.out.println(currencyText +" "+ product +"  is : " + currencyValueTransformed * valProduct + " credits");
-                                }
-                            }
-                        }
-                    }
+            if (isQueryToken(how) && (isQueryToken(many)) && (isCurrencyToken(credits)) && (isAssignToken(is))) {
+                int wordPos = pos + 4;
+                String currencyText = "" + array[wordPos];
+                while (isWordToken(array[wordPos + 1])) {
+                    wordPos = wordPos + 1;
+                    currencyText = currencyText + " " + array[wordPos];
+                }
+                String product = array[wordPos + 1];
+                if (existProductToken(product) && (isQueryToken(array[wordPos+2]))){
+                        getSentenceCurrency(0, currencyText);
+                        traslateWordsToValue(sentenceCurrency);
+                        double valProduct = getValueProductUnique(array[wordPos + 1]);
+                        System.out.println(currencyText +" "+ product +"  is : " + currencyValueTransformed * valProduct + " credits");
                 }
             }
         }catch (Exception e){
@@ -85,28 +74,24 @@ public class DictionaryController {
     }
 
     public boolean conversionQuery(String sentence) {
-        RNC.getListRomanNumberValues().clear();
+        romanNumeralsController.getListRomanNumberValues().clear();
         String[] array = sentence.split(" ");
         int pos = 0;
         String how = array[pos];
         try {
             String many = array[pos + 1];
             String is = array[pos + 2];
-            if (isQueryToken(how)) {
-                if (isQueryToken(many)) {
-                    if (isAssignToken(is)) {
-                        int wordPos = pos + 3;
-                        String currencyText = "" + array[wordPos];
-                        while (isWordToken(array[wordPos + 1])) {
-                            wordPos = wordPos + 1;
-                            currencyText = currencyText + " " + array[wordPos];
-                        }
-                        if (isQueryToken(array[wordPos + 1])) {
-                            getSentenceCurrency(0, currencyText);
-                            traslateWordsToValue(sentenceCurrency);
-                            System.out.println(currencyText + " is : " + currencyValueTransformed);
-                        }
-                    }
+            if (isQueryToken(how) && (isQueryToken(many)) && (isAssignToken(is))){
+                int wordPos = pos + 3;
+                String currencyText = "" + array[wordPos];
+                while (isWordToken(array[wordPos + 1])) {
+                    wordPos = wordPos + 1;
+                    currencyText = currencyText + " " + array[wordPos];
+                }
+                if (isQueryToken(array[wordPos + 1])) {
+                    getSentenceCurrency(0, currencyText);
+                    traslateWordsToValue(sentenceCurrency);
+                    System.out.println(currencyText + " is : " + currencyValueTransformed);
                 }
             }
         }catch (Exception e){
@@ -116,7 +101,7 @@ public class DictionaryController {
     }
 
     public boolean getValueOfProduct(String sentence){
-        RNC.getListRomanNumberValues().clear();
+        romanNumeralsController.getListRomanNumberValues().clear();
         String[] array =  sentence.split(" ");
         int pos = getSentenceCurrency(0,sentence) + 1;
         traslateWordsToValue(sentenceCurrency);
@@ -125,17 +110,11 @@ public class DictionaryController {
             String assignment = array[pos+1];
             String value = array[pos+2];
             String currency = array[pos+3];
-            if(!existProductToken(product)){
-                    if(isAssignToken(assignment)){
-                        if(isValueToken(value)){
-                            if(isCurrencyToken(currency)){
-                                double valueDouble = Double.parseDouble(value);
-                                double productValue = valueDouble / currencyValueTransformed;
-                                dictionary.insertProduct(product,productValue);
-                                System.out.println("Value of Product :" + product + " as " + productValue + "");
-                            }
-                        }
-                    }
+            if( !existProductToken(product) && isAssignToken(assignment) &&  isValueToken(value) && isCurrencyToken(currency) ) {
+                    double valueDouble = Double.parseDouble(value);
+                    double productValue = valueDouble / currencyValueTransformed;
+                    dictionary.insertProduct(product, productValue);
+                    System.out.println("Value of Product :" + product + " as " + productValue + "");
                 }
         }
         return true;
@@ -143,7 +122,7 @@ public class DictionaryController {
 
 
     public double getValueProductUnique(String product){
-       return dictionary.ProductsMap.get(product).getValue();
+       return dictionary.productsMap.get(product).getValue();
     }
 
     public int getSentenceCurrency(int initialPos, String sentence){
@@ -158,7 +137,7 @@ public class DictionaryController {
                    pos = s;
                }
            }catch(Exception e){
-               System.out.println("PALABRA RESERVADA NO ENCONTRADA");
+               log.log(Level.INFO,"Not found token");
            }
         }
         return pos;
@@ -166,7 +145,7 @@ public class DictionaryController {
 
     public boolean isQueryToken(String token){
         try {
-            return dictionary.TokensMap.get(token).getType().equals("query");
+            return dictionary.tokensMap.get(token).getType().equals("query");
         }catch (Exception e){
             return false;
         }
@@ -174,14 +153,14 @@ public class DictionaryController {
 
     public boolean isWordToken(String token){
         try {
-            return dictionary.TokensMap.get(token).getType().equals("word");
+            return dictionary.tokensMap.get(token).getType().equals("word");
         }catch (Exception e){
             return false;
         }
     }
     public boolean existProductToken(String token){
         try {
-            return dictionary.TokensMap.get(token).getType().equals("product");
+            return dictionary.tokensMap.get(token).getType().equals("product");
         }catch (Exception e){
             return false;
         }
@@ -189,7 +168,7 @@ public class DictionaryController {
 
     public boolean isAssignToken(String token){
         try {
-            return dictionary.TokensMap.get(token).getType().equals("assignment");
+            return dictionary.tokensMap.get(token).getType().equals("assignment");
         }catch (Exception e){
             return false;
         }
@@ -197,7 +176,7 @@ public class DictionaryController {
 
     public boolean isValueToken(String token){
         try {
-            double value = Double.parseDouble(token) ;
+            Double.parseDouble(token);
         }catch (Exception e){
             return false;
         }
@@ -206,7 +185,7 @@ public class DictionaryController {
 
     public boolean isCurrencyToken(String token){
         try {
-            return dictionary.TokensMap.get(token).getType().equals("currency");
+            return dictionary.tokensMap.get(token).getType().equals("currency");
         }catch (Exception e){
             return false;
         }
@@ -214,7 +193,7 @@ public class DictionaryController {
 
     public boolean isRomanSymbol(String token){
         try {
-             RNC.getRN().getRomanNumeralsMap().get(token);
+             romanNumeralsController.getRomanNumeralsFinal().getRomanNumeralsMap().get(token);
         }catch (Exception e){
             return false;
         }

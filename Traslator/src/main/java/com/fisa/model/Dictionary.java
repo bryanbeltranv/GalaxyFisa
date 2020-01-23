@@ -4,37 +4,35 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Dictionary {
-    public Map<String, Word> WordsMap = new HashMap<String, Word>();
-    public Map<String, Product> ProductsMap = new HashMap<String, Product>();
-    public Map<String, Token> TokensMap = new HashMap<String, Token>();
+    public Map<String, Word> wordsMap = new HashMap<String, Word>();
+    public Map<String, Product> productsMap = new HashMap<String, Product>();
+    public Map<String, Token> tokensMap = new HashMap<String, Token>();
 
+    static final String QUERY_CONSTANT = "query"; 
+    
     public Dictionary() {
         loadInitialTokens();
-        //insertWord("GLOP","X");
-        //insertWord("SPOK","I");
-
     }
 
     public boolean insertWord(String name , String value){
-        WordsMap.put(name,new Word(name,value));
-        TokensMap.put(name,new Token(name,"word"));
+        wordsMap.put(name,new Word(name,value));
+        tokensMap.put(name,new Token(name,"word"));
         return true;
     }
     public boolean insertProduct(String name , double value){
-        ProductsMap.put(name,new Product(name,value));
-        TokensMap.put(name,new Token(name,"product"));
+        productsMap.put(name,new Product(name,value));
+        tokensMap.put(name,new Token(name,"product"));
         return true;
     }
 
     public boolean loadInitialTokens(){
-        TokensMap.put("",new Token("",""));
-        TokensMap.put("IS",new Token("IS","assignment"));
-        TokensMap.put("HOW",new Token("HOW","query"));
-        TokensMap.put("MANY",new Token("MANY","query"));
-        TokensMap.put("MUCH",new Token("MUCH","query"));
-        TokensMap.put("?",new Token("?","query"));
-        TokensMap.put("CREDITS",new Token("CREDITS","currency"));
-        //insertProduct("SILVER",2);
+        tokensMap.put("",new Token("",""));
+        tokensMap.put("IS",new Token("IS","assignment"));
+        tokensMap.put("HOW",new Token("HOW",QUERY_CONSTANT));
+        tokensMap.put("MANY",new Token("MANY",QUERY_CONSTANT));
+        tokensMap.put("MUCH",new Token("MUCH",QUERY_CONSTANT));
+        tokensMap.put("?",new Token("?",QUERY_CONSTANT));
+        tokensMap.put("CREDITS",new Token("CREDITS","currency"));
         return true;
     }
 
