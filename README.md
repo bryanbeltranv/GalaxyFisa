@@ -10,7 +10,7 @@ GalaxyFisa1.0/GalaxyMain/src/main/java/com/fisa/Main.java
 ### 2. Carga de Datos 
 
 El sistema carga el archivo input.txt ubicado en el directorio:
-GalaxyFisa1.0/GalaxyMain/src/main/resources/input.txt"
+GalaxyFisa1.0/GalaxyMain/src/main/resources/input.txt
 
 ### 3. Descripción del Problema
 
