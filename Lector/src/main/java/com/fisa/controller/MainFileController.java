@@ -25,6 +25,7 @@ public class MainFileController {
 
     public boolean readMainFile(String file){
         readFileText(file);
+        System.out.println("RESPUESTAS: ");
         for(LineCode line : mainFile.getLineCodeList()){
             String code = line.getCode();
             dictionaryController.assignValueToWord(code);
@@ -35,14 +36,14 @@ public class MainFileController {
             }
         return true;
     }
-
-
+    
     public boolean readFileText(String file){
         try{
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             String linea;
             int numLinea = 1;
+            System.out.println("ARCHIVO DE ENTRADA: " + file);
             while((linea = br.readLine()) != null){
                 System.out.println(linea);
                 mainFile.insertLine(numLinea , linea);
