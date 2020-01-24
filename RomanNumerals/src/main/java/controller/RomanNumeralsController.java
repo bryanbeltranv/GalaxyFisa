@@ -119,7 +119,7 @@ public class RomanNumeralsController {
     public boolean validateMaximumNumberOfRepetitions(String sentence) {
         for (String symbol : romanNumeralsFinal.getSymbols()) {
             long repeat = repeatedSymbols(sentence, symbol);
-            if ((symbol.contains("I")) || (symbol.contains("X")) || (symbol.contains("C"))) {
+            if ((symbol.contains("I")) || (symbol.contains("X")) || (symbol.contains("C")) || (symbol.contains("M")))  {
                switch ((int) repeat){
                    case(3):
                        return ruleRepetition3LowerValue(sentence);
@@ -129,9 +129,6 @@ public class RomanNumeralsController {
                 if(repeat>4){
                     return false;
                 }
-            }
-            if(symbol.contains("M") && repeat==4){
-                return false;
             }
             if(symbol.contains("V") || (symbol.contains("L")) || (symbol.contains("D")))  {
                 if(repeat>1){
@@ -165,18 +162,16 @@ public class RomanNumeralsController {
         for(int i = 0; i < listRomanNumerals.size(); i++){
             if((i+4)< listRomanNumerals.size()) {
                 String pos1 = "" + listRomanNumerals.get(i);
-                String pos2 = "" + listRomanNumerals.get(i + 2);
-                String pos3 = "" + listRomanNumerals.get(i + 3);
-                String pos4 = "" + listRomanNumerals.get(i + 4);
+                String pos2 = "" + listRomanNumerals.get(i + 1);
+                String pos3 = "" + listRomanNumerals.get(i + 2);
+                String pos4 = "" + listRomanNumerals.get(i + 3);
+                String pos5 = "" + listRomanNumerals.get(i + 4);
                 if(pos1.equals(pos2) && pos2.equals(pos3) && pos3.equals(pos4)){
                     return false;
-                }
-            }
-            if((i+4)< listRomanNumerals.size()){
-                String pos3 = ""+listRomanNumerals.get(i+2);
-                String pos4 = ""+listRomanNumerals.get(i+3);
-                if(romanNumeralsFinal.getValueRomanNumber(pos3) <romanNumeralsFinal.getValueRomanNumber(pos4)){
-                    return false;
+                }else{
+                    if ((pos1.equals(pos2) && pos2.equals(pos3)) &&(romanNumeralsFinal.getValueRomanNumber(pos4) >romanNumeralsFinal.getValueRomanNumber(pos5))){
+                        return false;
+                    }
                 }
             }
         }
