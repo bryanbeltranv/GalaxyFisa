@@ -10,10 +10,10 @@ import java.util.ArrayList;
 public class RomanNumeralsController {
     RomanNumerals romanNumeralsFinal = new RomanNumerals();
     ArrayList <RomanNumber> listRomanNumberValues = new ArrayList<>();
-    RomanNumber romanNumber = new RomanNumber();
+
 
     public boolean validRomanNumeralStructure(String sentence){
-        if(romanNumeralSemanticValidator(sentence) && validateOrderOfRomanNumeralValues()){
+        if(romanNumeralSemanticValidator(sentence) && (validateOrderOfRomanNumeralValues())){
                 return getSumOfListRomanNumerals();
         }
         return false;
@@ -89,12 +89,14 @@ public class RomanNumeralsController {
     }
 
     public void insertFirstRomanNumber(String first){
+        RomanNumber romanNumber = new RomanNumber();
         romanNumber.setSymbol(first);
         romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(first));
         listRomanNumberValues.add(romanNumber);
     }
 
     public void insertSubtractionValuesRomanNumber(String first,String second){
+        RomanNumber romanNumber = new RomanNumber();
         romanNumber.setSymbol(first+second);
         romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(second) - romanNumeralsFinal.getValueRomanNumber(first));
         listRomanNumberValues.add(romanNumber);
@@ -108,6 +110,7 @@ public class RomanNumeralsController {
     }
 
     public void insert3ValuesRomanNumber(String first,String second, String third){
+        RomanNumber romanNumber = new RomanNumber();
         romanNumber.setSymbol(first+second+third);
         romanNumber.setValue(romanNumeralsFinal.getValueRomanNumber(first)+romanNumeralsFinal.getValueRomanNumber(second)+romanNumeralsFinal.getValueRomanNumber(third));
         listRomanNumberValues.add(romanNumber);

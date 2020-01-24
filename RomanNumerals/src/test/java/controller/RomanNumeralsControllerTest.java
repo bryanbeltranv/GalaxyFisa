@@ -12,7 +12,7 @@ public class RomanNumeralsControllerTest {
 
     private static RomanNumeralsController romanNumeralsController;
     final Logger log = Logger.getLogger(RomanNumeralsControllerTest.class.getName());
-    static final String ROMAN_NUMBER_TEST = "XXIX";
+    static final String ROMAN_NUMBER_TEST = "MMMCMXXIX";
 
     @BeforeClass
     public static void beforeClass() {
